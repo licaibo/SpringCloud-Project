@@ -1,0 +1,28 @@
+server:
+  port: 5555
+
+management:
+  context-path: /admin
+
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /admin/info
+    healthCheckUrlPath: /admin/health
+  client:
+      serviceUrl:
+        defaultZone: http://localhost:8765/eureka/
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/licaibo/config-repo.git #配置文件git仓库地址
+          username: xxx
+          password: xxx
