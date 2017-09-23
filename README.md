@@ -1,2 +1,2 @@
 # SpringCloud-Project
-SpringCloud的分布式微服务搭建
+基于SpringBoot构建SpringCloud的分布式微服务，主要来源于平时工作中使用的经历，在这里做个例子和总结，构建注册中心、配置中心、负载均衡等
