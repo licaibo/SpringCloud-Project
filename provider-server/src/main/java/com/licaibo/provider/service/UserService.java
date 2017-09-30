@@ -1,6 +1,6 @@
 package com.licaibo.provider.service;
 
-import com.licaibo.provider.bean.User;
+import com.licaibo.common.User;
 import com.licaibo.provider.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,7 @@
 package com.licaibo.provider.dao;
 
-import com.licaibo.provider.bean.User;
+
+import com.licaibo.common.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

@@ -1,4 +1,4 @@
-package com.licaibo.provider.bean;
+package com.licaibo.common;
 
 /**
  * Created by licaibo on 2017/9/30
