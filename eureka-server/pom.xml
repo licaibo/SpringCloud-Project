@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>com.licaibo.spring.cloud</groupId>
-        <artifactId>parent-server</artifactId>
+        <artifactId>parent-maven</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
