@@ -2,11 +2,11 @@ server:
   port: 8081
 
 spring:
-  cloud:
-    config:
-      uri: http://localhost:${config.port:5555}
-      name: service
-      profile: ${config.profile:dev}
+#  cloud:
+#    config:
+#      uri: http://localhost:${config.port:5555}
+#      name: service
+#      profile: ${config.profile:dev}
   application:
     name: provider-server
 
