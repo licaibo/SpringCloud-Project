@@ -106,16 +106,35 @@
     </dependencies>
 
 
-    <repositories>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--            <id>public</id>-->
+<!--            <name>Public Repositories</name>-->
+<!--            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+    <!-- maven deploy 默认是SNAPSHOT后缀的会打包至快照仓库。生产打包可以指定打包至稳定版本releases仓库 -->
+    <!--
+        snapshots（快照） : 仓库用于开发阶段，即使不改变版本号，maven deploy每次会去更新最新代码，适用于开发阶段代码频繁的改动
+        releases（稳定版本） ： 即使改变代码内容，只要版本号不变，maven deploy也不会去更新最新代码，适用于发布生产稳定版本
+    -->
+    <!-- 配置打包至虚拟机nexus私服 -->
+    <distributionManagement>
         <repository>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>public</id>
-            <name>Public Repositories</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <id>nexus</id>
+            <name>Releases</name>
+            <url>http://10.211.55.5:8081/repository/maven-releases/</url>
         </repository>
-    </repositories>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Snapshot</name>
+            <url>http://10.211.55.5:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 
 
