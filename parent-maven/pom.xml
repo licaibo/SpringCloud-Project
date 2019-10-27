@@ -122,15 +122,15 @@
         snapshots（快照） : 仓库用于开发阶段，即使不改变版本号，maven deploy每次会去更新最新代码，适用于开发阶段代码频繁的改动
         releases（稳定版本） ： 即使改变代码内容，只要版本号不变，maven deploy也不会去更新最新代码，适用于发布生产稳定版本
     -->
-    <!-- 配置打包至虚拟机nexus私服 -->
+    <!-- 配置打包至虚拟机nexus私服 id必须和maven setting.xml中server配置的ID一样，否则会找不到nexus私服报错401-->
     <distributionManagement>
         <repository>
-            <id>nexus</id>
+            <id>mac-ubuntu</id>
             <name>Releases</name>
             <url>http://10.211.55.5:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>nexus</id>
+            <id>mac-ubuntu</id>
             <name>Snapshot</name>
             <url>http://10.211.55.5:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
