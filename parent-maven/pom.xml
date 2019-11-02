@@ -127,12 +127,12 @@
         <repository>
             <id>mac-ubuntu</id>
             <name>Releases</name>
-            <url>http://10.211.55.5:8081/repository/maven-releases/</url>
+            <url>http://127.0.0.1:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>mac-ubuntu</id>
             <name>Snapshot</name>
-            <url>http://10.211.55.5:8081/repository/maven-snapshots/</url>
+            <url>http://127.0.0.1:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
