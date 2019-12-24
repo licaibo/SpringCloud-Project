@@ -9,11 +9,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * @author licaibo
  * @date 2019-12-20
  **/
-@Configuration
-@EnableWebSecurity
-public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
-
-
-
-
-}
+//@Configuration
+//@EnableWebSecurity
+//public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+//
+//
+//
+//
+//}

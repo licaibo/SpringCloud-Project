@@ -5,13 +5,15 @@ spring:
   application:
     name: auth-server
   redis:
-    host: localhost
+    host: 127.0.0.1
     port: 6379
     database: 0
+    password: 871107274
   security:
     user:
       name: admin
       password: admin
+
 
 
 eureka:
