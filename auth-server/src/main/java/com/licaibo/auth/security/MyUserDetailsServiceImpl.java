@@ -30,8 +30,10 @@ public class MyUserDetailsServiceImpl implements UserDetailsService {
 
         }
 
-        Collection<GrantedAuthority> authorities = new ArrayList<>();
-        return new User("admin",new BCryptPasswordEncoder().encode("123456"),authorities);
+        return MyUserDetails.builder().username("admin").password(new BCryptPasswordEncoder().encode("123456")).build();
+
+//        Collection<GrantedAuthority> authorities = new ArrayList<>();
+//        return new User("admin",new BCryptPasswordEncoder().encode("123456"),authorities);
     }
 
 
