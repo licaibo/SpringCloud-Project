@@ -10,7 +10,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
  * @href http://blog.didispace.com/spring-session-xjf-2/
  **/
 @Configuration
-@EnableRedisHttpSession
+@EnableRedisHttpSession(redisNamespace = "licaibo:session",maxInactiveIntervalInSeconds = 120)
 public class RedisSessionConfig {
 
 
