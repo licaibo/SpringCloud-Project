@@ -1,6 +1,8 @@
 package com.licaibo.auth.config;
 
 import com.licaibo.auth.security.filter.MyUsernameAuthenticationFilter;
+import com.licaibo.auth.security.handler.MyAuthenctiationFailureHandler;
+import com.licaibo.auth.security.handler.MyAuthenctiationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -28,6 +30,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     @Qualifier("myUserDetailsServiceImpl")
     private UserDetailsService userDetailsService;
+    @Autowired
+    private MyAuthenctiationFailureHandler myAuthenctiationFailureHandler;
+    @Autowired
+    private MyAuthenctiationSuccessHandler myAuthenctiationSuccessHandler;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -55,9 +61,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     MyUsernameAuthenticationFilter myUsernameAuthenticationFilter() throws Exception {
         MyUsernameAuthenticationFilter filter = new MyUsernameAuthenticationFilter();
-        //TODO 自定义过滤器 成功和失败的处理
-        //filter.setAuthenticationSuccessHandler(new SuccessHandler());
-        //filter.setAuthenticationFailureHandler(new FailureHandler());
+        //自定义过滤器 成功和失败的处理
+        filter.setAuthenticationSuccessHandler(myAuthenctiationSuccessHandler);
+        filter.setAuthenticationFailureHandler(myAuthenctiationFailureHandler);
         filter.setFilterProcessesUrl("/login");
         //filter.setUsernameParameter("username");
         //filter.setPasswordParameter("password");

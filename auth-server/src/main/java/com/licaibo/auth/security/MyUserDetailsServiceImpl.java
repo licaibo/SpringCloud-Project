@@ -1,5 +1,6 @@
 package com.licaibo.auth.security;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,10 +15,12 @@ import org.springframework.stereotype.Service;
  * @date 2019-12-25
  **/
 @Service
+@Slf4j
 public class MyUserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        log.info("用户 : {} 执行登陆",username);
         //TODO 登陆时根据用户名查询用户信息,先临时判断一下
         if(!"admin".equals(username)) {
             throw new UsernameNotFoundException(username);

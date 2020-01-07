@@ -32,7 +32,7 @@ public class MyUsernameAuthenticationFilter extends UsernamePasswordAuthenticati
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         //json提交
-        if(request.getContentType().equals(MediaType.APPLICATION_JSON_UTF8_VALUE) || request.getContentType().equals(MediaType.APPLICATION_JSON_VALUE)) {
+        if(MediaType.APPLICATION_JSON_UTF8_VALUE.equals(request.getContentType()) || MediaType.APPLICATION_JSON_VALUE.equals(request.getContentType())) {
             if (this.postOnly && !request.getMethod().equals("POST")) {
                 throw new AuthenticationServiceException("Authentication method not supported: " + request.getMethod());
             }
