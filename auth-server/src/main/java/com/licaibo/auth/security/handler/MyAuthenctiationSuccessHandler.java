@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * spring security 授权成功处理
+ * spring security 用户登陆认证成功处理
  * @author licaibo
  * @date 2020-01-07
  **/
