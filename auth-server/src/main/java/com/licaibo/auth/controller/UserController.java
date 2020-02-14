@@ -2,6 +2,8 @@ package com.licaibo.auth.controller;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,9 +46,9 @@ public class UserController {
     }
 
     @GetMapping("/test")
-    public String test() {
+    public ResponseEntity test() {
         System.out.println("test spring security");
-        return "test spring security";
+        return ResponseEntity.status(HttpStatus.OK).body("请求成功");
     }
 
 
