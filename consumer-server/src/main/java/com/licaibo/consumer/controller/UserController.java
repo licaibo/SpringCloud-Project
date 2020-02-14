@@ -3,12 +3,14 @@ package com.licaibo.consumer.controller;
 import com.licaibo.common.User;
 import com.licaibo.consumer.feign.ProviderFeign;
 import com.licaibo.consumer.servicer.UserServicer;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by Administrator on 2017/9/30
  */
+@Slf4j
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -25,7 +27,8 @@ public class UserController {
      */
     @GetMapping("/{name}")
     public User selectByName(@PathVariable String name) {
-       return userServicer.selectByName(name).getBody();
+        log.info("restTemplate调用");
+        return userServicer.selectByName(name).getBody();
     }
 
     /**
@@ -35,6 +38,7 @@ public class UserController {
      */
     @GetMapping("/feign")
     public String selectByFeign(@RequestParam("name") String name) {
+        log.info("feign调用");
         return providerFeign.selectByFeign(name);
     }
 
