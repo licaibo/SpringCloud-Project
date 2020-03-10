@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 
 /**
- *
  * spring security基于用户名和密码的认证过滤器，支持json提交和表单提交用户认证
  * @author licaibo
  * @date 2019-12-26
