@@ -44,6 +44,21 @@
             <groupId>io.lettuce</groupId>
             <artifactId>lettuce-core</artifactId>
         </dependency>
+
+        <!-- 项目共通的实体 -->
+        <dependency>
+            <groupId>com.licaibo.spring.cloud</groupId>
+            <artifactId>common-server</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 项目的核心基础框架 -->
+        <dependency>
+            <groupId>com.licaibo.spring.cloud</groupId>
+            <artifactId>framework-server</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 

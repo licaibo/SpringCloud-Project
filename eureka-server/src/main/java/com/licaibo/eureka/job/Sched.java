@@ -27,7 +27,7 @@ public class Sched {
         return scheduler;
     }
 
-    @Scheduled(cron = "*/5 * * * * ?")
+    //@Scheduled(cron = "*/5 * * * * ?")
     public void clearRealtimeCacheData() {
         log.info("每5秒执行一次");
     }

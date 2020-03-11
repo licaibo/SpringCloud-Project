@@ -1,8 +1,8 @@
 package com.licaibo.auth.security.handler;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.licaibo.framework.base.BasicResult;
+import com.licaibo.framework.enu.HttpResultEnum;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -20,16 +20,12 @@ import java.io.IOException;
 @Service
 public class MyAuthenctiationFailureHandler implements AuthenticationFailureHandler {
 
-    @Autowired
-    private ObjectMapper objectMapper;
-
-
     @Override
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException authenticationException) throws IOException {
-        log.info("登录失败");
+        log.info("用户登录失败");
         httpServletResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         httpServletResponse.setContentType("application/json;charset=UTF-8");
-        httpServletResponse.getWriter().write(objectMapper.writeValueAsString(authenticationException.getMessage()));
+        httpServletResponse.getWriter().write(BasicResult.builder().code(HttpResultEnum.INTERNAL_SERVER_ERROR.getCode()).msg("用户名或密码错误").build().toString());
     }
 
 
