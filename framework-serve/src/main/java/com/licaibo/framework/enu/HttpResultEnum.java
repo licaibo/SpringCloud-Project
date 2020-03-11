@@ -11,6 +11,7 @@ public enum HttpResultEnum {
     UNKONW_ERROR(-1, "Unkonw Error"),
     SUCCESS(200, "OK"),
     BAD_REQUEST(400, "Bad Request"),
+    UNAUTHORIZED(401, "Unauthorized"),
     FORBIDDEN(403, "Forbidden"),
     NOT_FOUND(404, "Not Found"),
     METHOD_NOT_ALLOWED(405, "Method Not Allowed"),

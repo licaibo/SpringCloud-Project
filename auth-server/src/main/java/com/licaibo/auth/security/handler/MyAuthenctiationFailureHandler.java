@@ -1,9 +1,10 @@
 package com.licaibo.auth.security.handler;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.licaibo.framework.base.BasicResult;
 import com.licaibo.framework.enu.HttpResultEnum;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Service;
@@ -20,12 +21,16 @@ import java.io.IOException;
 @Service
 public class MyAuthenctiationFailureHandler implements AuthenticationFailureHandler {
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @Override
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException authenticationException) throws IOException {
         log.info("用户登录失败");
-        httpServletResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+        httpServletResponse.setStatus(HttpResultEnum.UNAUTHORIZED.getCode());
         httpServletResponse.setContentType("application/json;charset=UTF-8");
-        httpServletResponse.getWriter().write(BasicResult.builder().code(HttpResultEnum.INTERNAL_SERVER_ERROR.getCode()).msg("用户名或密码错误").build().toString());
+        BasicResult basicResult = BasicResult.builder().code(HttpResultEnum.UNAUTHORIZED.getCode()).msg("用户名或密码错误,请重新登陆!").build();
+        httpServletResponse.getWriter().write(objectMapper.writeValueAsString(basicResult));
     }
 
 
