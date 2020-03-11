@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * hhtp请求基本返回结构
+ * http请求基本返回结构
  * @author licaibo
  * @date 2020-03-11
  **/
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BaseHttpResult<T> {
+public class BasicResult<T> {
 
     /***
      * HTTP状态码

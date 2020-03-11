@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BasicException extends RuntimeException{
+public class BasicException extends RuntimeException {
+
 
     /***
      * HTTP状态码

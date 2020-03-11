@@ -1,17 +1,21 @@
 package com.licaibo.framework.enu;
 
+
 /**
- * 状态码枚举
+ * 常用的HTTP状态码枚举 参考HttpStatus
  * @author licaibo
  * @date 2020-03-11
  **/
 public enum HttpResultEnum {
 
-    UNKONW_ERROR(-1, "未知错误"),
-    SUCCESS(200, "成功"),
-    BAD_REQUEST(400, "请求错误"),
-    FORBIDDEN(403, "权限错误"),
-    FAIL(500,"服务器错误")
+    UNKONW_ERROR(-1, "Unkonw Error"),
+    SUCCESS(200, "OK"),
+    BAD_REQUEST(400, "Bad Request"),
+    FORBIDDEN(403, "Forbidden"),
+    NOT_FOUND(404, "Not Found"),
+    METHOD_NOT_ALLOWED(405, "Method Not Allowed"),
+    UNPROCESSABLE_ENTITY(422, "Unprocessable Entity"),
+    INTERNAL_SERVER_ERROR(500, "Internal Server Error")
     ;
 
 
