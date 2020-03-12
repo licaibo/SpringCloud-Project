@@ -2,6 +2,8 @@ package com.licaibo.auth.controller;
 
 import com.licaibo.auth.security.MyUserDetails;
 import com.licaibo.framework.base.BasicResultController;
+import com.licaibo.framework.enu.HttpResultEnum;
+import com.licaibo.framework.exception.BasicException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.websocket.RemoteEndpoint;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author licaibo
@@ -44,7 +49,9 @@ public class UserController extends BasicResultController {
 
     @GetMapping("/get")
     public ResponseEntity get() {
-        System.out.println("test spring security");
+        if(true) {
+          throw  new BasicException(HttpResultEnum.NOT_FOUND.getCode(),"没发现服务");
+        }
         return responseOk("get请求成功");
     }
 

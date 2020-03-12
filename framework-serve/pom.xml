@@ -15,5 +15,12 @@
     <version>1.0-SNAPSHOT</version>
     <name>framework-server</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>

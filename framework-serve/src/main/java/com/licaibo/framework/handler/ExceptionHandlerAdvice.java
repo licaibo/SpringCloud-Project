@@ -3,6 +3,7 @@ package com.licaibo.framework.handler;
 import com.licaibo.framework.base.BasicResult;
 import com.licaibo.framework.enu.HttpResultEnum;
 import com.licaibo.framework.exception.BasicException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author licaibo
  * @date 2020-03-11
  **/
+@Slf4j
 @ControllerAdvice
 public class ExceptionHandlerAdvice {
 
