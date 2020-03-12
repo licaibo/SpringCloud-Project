@@ -1,14 +1,11 @@
 package com.licaibo.auth.controller;
 
+import com.licaibo.auth.security.MyUserDetails;
+import com.licaibo.framework.base.BasicResultController;
 import lombok.extern.slf4j.Slf4j;
-
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,7 +17,7 @@ import javax.servlet.http.HttpSession;
 @Slf4j
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BasicResultController {
 
 
     @RequestMapping("/test/redis/session")
@@ -45,10 +42,22 @@ public class UserController {
         return "index";
     }
 
-    @GetMapping("/test")
-    public ResponseEntity test() {
+    @GetMapping("/get")
+    public ResponseEntity get() {
         System.out.println("test spring security");
-        return ResponseEntity.status(HttpStatus.OK).body("请求成功");
+        return responseOk("get请求成功");
+    }
+
+    @PostMapping("/post")
+    public ResponseEntity post() {
+        System.out.println("test spring security");
+        return responseOk("post请求成功");
+    }
+
+    @GetMapping("/info")
+    public ResponseEntity info() {
+        MyUserDetails principal = (MyUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return responseOk(principal);
     }
 
 
