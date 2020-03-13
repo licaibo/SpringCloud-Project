@@ -1,7 +1,6 @@
 package com.licaibo.provider.service;
 
-import com.licaibo.common.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.licaibo.common.dto.UserInfo;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,13 +12,12 @@ public class UserService {
 //    @Autowired
 //    private UserDao userDao;
 
-    public User selectByName(String name) {
-        User user = new User();
-        user.setId(1);
-        user.setName("test");
-        user.setAddress("china");
-        user.setAge(20);
-        return user;
+    public UserInfo selectByName(String name) {
+        UserInfo userInfo = new UserInfo();
+        userInfo.setId("1");
+        userInfo.setUsername("test");
+        userInfo.setPassword("china");
+        return userInfo;
     }
 
 }

@@ -1,6 +1,6 @@
 package com.licaibo.consumer.servicer;
 
-import com.licaibo.common.User;
+import com.licaibo.common.dto.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,8 +15,8 @@ public class UserServicer {
     @Autowired
     RestTemplate restTemplate;
 
-    public ResponseEntity<User> selectByName(String name) {
-        ResponseEntity<User> responseEntity = restTemplate.getForEntity("http://provider-server/user/{name}" ,User.class,name);
+    public ResponseEntity<UserInfo> selectByName(String name) {
+        ResponseEntity<UserInfo> responseEntity = restTemplate.getForEntity("http://provider-server/user/{name}" , UserInfo.class,name);
         return responseEntity;
     }
 

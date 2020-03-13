@@ -22,17 +22,17 @@ public class MyUserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         log.info("用户 : {} 执行登陆",username);
         //TODO 登陆时根据用户名查询用户信息,先临时判断一下
-        if(!"admin".equals(username)) {
+        String usernameTemp = "admin";
+        String passwordTemp = "123456";
+
+        if(!usernameTemp.equals(username)) {
             throw new UsernameNotFoundException(username);
         } else {
             //TODO 存入redis
 
         }
 
-        return MyUserDetails.builder().username("admin").password(new BCryptPasswordEncoder().encode("123456")).build();
-
-//        Collection<GrantedAuthority> authorities = new ArrayList<>();
-//        return new User("admin",new BCryptPasswordEncoder().encode("123456"),authorities);
+        return MyUserDetails.builder().username(usernameTemp).password(new BCryptPasswordEncoder().encode(passwordTemp)).build();
     }
 
 

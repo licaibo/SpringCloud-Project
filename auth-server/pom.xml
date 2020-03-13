@@ -49,6 +49,11 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>io.jsonwebtoken</groupId>-->
+<!--            <artifactId>jjwt</artifactId>-->
+<!--        </dependency>-->
+
         <!-- 项目共通的实体 -->
         <dependency>
             <groupId>com.licaibo.spring.cloud</groupId>

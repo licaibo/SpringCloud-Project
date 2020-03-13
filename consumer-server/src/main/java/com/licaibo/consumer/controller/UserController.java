@@ -1,6 +1,6 @@
 package com.licaibo.consumer.controller;
 
-import com.licaibo.common.User;
+import com.licaibo.common.dto.UserInfo;
 import com.licaibo.consumer.feign.ProviderFeign;
 import com.licaibo.consumer.servicer.UserServicer;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +26,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/{name}")
-    public User selectByName(@PathVariable String name) {
+    public UserInfo selectByName(@PathVariable String name) {
         log.info("restTemplate调用");
         return userServicer.selectByName(name).getBody();
     }

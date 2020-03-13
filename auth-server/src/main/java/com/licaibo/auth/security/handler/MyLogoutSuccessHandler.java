@@ -27,7 +27,7 @@ public class MyLogoutSuccessHandler implements LogoutSuccessHandler {
 
     @Override
     public void onLogoutSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
-        //User user = (User) authentication.getPrincipal();
+        //UserInfo user = (UserInfo) authentication.getPrincipal();
         //String username = user.getUsername();
         //log.info("username: {}  is offline now", username);
         httpServletResponse.setContentType("application/json;charset=UTF-8");

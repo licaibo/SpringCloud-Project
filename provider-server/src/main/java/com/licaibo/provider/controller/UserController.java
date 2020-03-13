@@ -1,7 +1,7 @@
 package com.licaibo.provider.controller;
 
 
-import com.licaibo.common.User;
+import com.licaibo.common.dto.UserInfo;
 import com.licaibo.provider.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/{name}")
-    public User selectByName(@PathVariable String name) {
+    public UserInfo selectByName(@PathVariable String name) {
         return userService.selectByName(name);
     }
 
