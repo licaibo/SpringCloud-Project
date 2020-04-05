@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+spring:
+#  cloud:
+#    config:
+#      uri: http://localhost:${config.port:5555}
+#      name: service
+#      profile: ${config.profile:dev}
+  application:
+    name: provider-order-server
+
+# MySQL
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:10.211.55.5}:${MYSQL_PORT:3306}/provider_order?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 871107274
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8765/eureka/
+
+pagehelper:
+  rowBoundsWithCount: true
+  pageSizeZero: true
+  reasonable: false
+
+  # mybatis
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml
+
+
+

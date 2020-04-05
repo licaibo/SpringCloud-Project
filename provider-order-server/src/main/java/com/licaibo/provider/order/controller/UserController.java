@@ -1,8 +1,8 @@
-package com.licaibo.provider.controller;
+package com.licaibo.provider.order.controller;
 
 
 import com.licaibo.common.dto.UserInfo;
-import com.licaibo.provider.service.UserService;
+import com.licaibo.provider.order.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

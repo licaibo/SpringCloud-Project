@@ -1,4 +1,4 @@
-package com.licaibo.provider.service;
+package com.licaibo.provider.stock.service;
 
 import com.licaibo.common.dto.UserInfo;
 import org.springframework.stereotype.Service;

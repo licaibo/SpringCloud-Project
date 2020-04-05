@@ -11,9 +11,9 @@
     </parent>
 
     <groupId>com.licaibo.spring.cloud</groupId>
-    <artifactId>provider-server</artifactId>
+    <artifactId>provider-stock-server</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>provider-server</name>
+    <name>provider-stock-server</name>
 
     <dependencyManagement>
         <dependencies>

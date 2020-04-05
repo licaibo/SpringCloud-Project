@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Date 2019-11-20
  **/
 @Component
-@FeignClient(name = "provider-server")
+@FeignClient(name = "provider-order-server")
 public interface ProviderFeign {
 
 

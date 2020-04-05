@@ -1,4 +1,4 @@
-package com.licaibo.provider.inside;
+package com.licaibo.provider.order.inside;
 
 import org.springframework.web.bind.annotation.*;
 
