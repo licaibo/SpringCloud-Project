@@ -1,8 +1,9 @@
 package com.licaibo.consumer.controller;
 
 import com.licaibo.common.dto.UserInfo;
-import com.licaibo.consumer.feign.ProviderFeign;
-import com.licaibo.consumer.servicer.UserServicer;
+import com.licaibo.consumer.feign.ProviderOrderFeign;
+import com.licaibo.consumer.servicer.UserService;
+import com.licaibo.consumer.servicer.impl.UserServicerImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,9 +17,9 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserServicer userServicer;
+    private UserService userService;
     @Autowired
-    private ProviderFeign providerFeign;
+    private ProviderOrderFeign providerOrderFeign;
 
     /**
      * restTemplate调用
@@ -28,7 +29,7 @@ public class UserController {
     @GetMapping("/{name}")
     public UserInfo selectByName(@PathVariable String name) {
         log.info("restTemplate调用");
-        return userServicer.selectByName(name).getBody();
+        return userService.selectByName(name).getBody();
     }
 
     /**
@@ -39,7 +40,7 @@ public class UserController {
     @GetMapping("/feign")
     public String selectByFeign(@RequestParam("name") String name) {
         log.info("feign调用");
-        return providerFeign.selectByFeign(name);
+        return providerOrderFeign.selectByFeign(name);
     }
 
 }

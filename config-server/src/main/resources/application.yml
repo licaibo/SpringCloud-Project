@@ -16,7 +16,7 @@ eureka:
     healthCheckUrlPath: /admin/health
   client:
       serviceUrl:
-        defaultZone: http://localhost:8765/eureka/
+        defaultZone: http://localhost:9001/eureka/
 
 spring:
   cloud:

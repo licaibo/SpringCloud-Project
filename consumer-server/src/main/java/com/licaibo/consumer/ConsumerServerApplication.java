@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = {"com.licaibo.consumer", "com.licaibo.common","com.licaibo.framework"})
 //@EnableEurekaClient
 //@EnableCircuitBreaker
 //@EnableFeignClients

@@ -19,4 +19,4 @@ flowable:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8765/eureka/
+      defaultZone: http://localhost:9001/eureka/
