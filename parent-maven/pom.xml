@@ -35,6 +35,7 @@
         <flowable-spring-boot-starter.version>6.5.0</flowable-spring-boot-starter.version>
         <mysql-connector-java.version>8.0.15</mysql-connector-java.version>
         <spring-boot-starter-jdbc.version>2.2.5.RELEASE</spring-boot-starter-jdbc.version>
+        <cron-utils.version>9.0.1</cron-utils.version>
     </properties>
 
     <!-- dependencyManagement标签下的依赖包，如果子模块不显示声明在dependency是不绘被引入，防止子模块因为继承父pom而引入不需要的依赖-->
@@ -142,6 +143,12 @@
                 <artifactId>spring-boot-starter-jdbc</artifactId>
                 <version>${spring-boot-starter-jdbc.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.cronutils</groupId>
+                <artifactId>cron-utils</artifactId>
+                <version>${cron-utils.version}</version>
+            </dependency>
+
 
 
         </dependencies>
