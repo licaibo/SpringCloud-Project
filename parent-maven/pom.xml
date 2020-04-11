@@ -36,6 +36,8 @@
         <mysql-connector-java.version>8.0.15</mysql-connector-java.version>
         <spring-boot-starter-jdbc.version>2.2.5.RELEASE</spring-boot-starter-jdbc.version>
         <cron-utils.version>9.0.1</cron-utils.version>
+        <seata-all.version>1.1.0</seata-all.version>
+        <spring-cloud-alibaba-seata.version>2.1.0.RELEASE</spring-cloud-alibaba-seata.version>
     </properties>
 
     <!-- dependencyManagement标签下的依赖包，如果子模块不显示声明在dependency是不绘被引入，防止子模块因为继承父pom而引入不需要的依赖-->
@@ -149,7 +151,23 @@
                 <version>${cron-utils.version}</version>
             </dependency>
 
-
+            <!--seata-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-seata</artifactId>
+                <version>${spring-cloud-alibaba-seata.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>seata-all</artifactId>
+                        <groupId>io.seata</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-all</artifactId>
+                <version>${seata-all.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

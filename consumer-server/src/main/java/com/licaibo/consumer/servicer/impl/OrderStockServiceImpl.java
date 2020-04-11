@@ -3,6 +3,7 @@ package com.licaibo.consumer.servicer.impl;
 import com.licaibo.consumer.feign.ProviderOrderFeign;
 import com.licaibo.consumer.feign.ProviderStockFeign;
 import com.licaibo.consumer.servicer.OrderStockService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,7 @@ public class OrderStockServiceImpl implements OrderStockService {
      * @return
      */
     @Override
+    @GlobalTransactional(name = "oderStockHandler",rollbackFor = Exception.class)
     public int oderStockHandler(String oderName, String stockName) {
         //下订单
         int orderResul = providerOrderFeign.addOrder(oderName);

@@ -9,8 +9,14 @@ spring:
 #      profile: ${config.profile:dev}
   application:
     name: provider-stock-server
+  # seata
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: licaibo_tx_group
 
-# MySQL
+
+  # MySQL
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:10.211.55.5}:${MYSQL_PORT:3306}/provider_stock?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
     username: root

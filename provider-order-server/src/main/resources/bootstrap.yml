@@ -9,6 +9,11 @@ spring:
 #      profile: ${config.profile:dev}
   application:
     name: provider-order-server
+  # seata
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: licaibo_tx_group
 
 # MySQL
   datasource:

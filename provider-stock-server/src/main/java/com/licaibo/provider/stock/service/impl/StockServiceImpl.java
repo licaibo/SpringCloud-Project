@@ -25,6 +25,13 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public int deduction(String name) {
+
+        //模拟扣除库存失败
+//        String var = null;
+//        if(var.equals("test")) {
+//            //do somethins
+//        }
+
         Example example = Example.builder(Stock.class).build();
         example.createCriteria().andEqualTo(Stock.FIELD_NAME,name);
         Stock stock = stockDao.selectOneByExample(example);
