@@ -23,7 +23,7 @@ public class StockFeginController {
      * @return
      */
     @GetMapping("/deduction")
-    public int deduction(@RequestParam("name") String name) {
+    public int deduction(@RequestParam("name") String name) throws InterruptedException {
         return stockService.deduction(name);
     }
 

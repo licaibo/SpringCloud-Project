@@ -24,13 +24,14 @@ public class StockServiceImpl implements StockService {
      * @return
      */
     @Override
-    public int deduction(String name) {
+    public int deduction(String name) throws InterruptedException {
 
         //模拟扣除库存失败
-//        String var = null;
-//        if(var.equals("test")) {
-//            //do somethins
-//        }
+        Thread.sleep(60000);
+        String var = null;
+        if(var.equals("test")) {
+            //do somethins
+        }
 
         Example example = Example.builder(Stock.class).build();
         example.createCriteria().andEqualTo(Stock.FIELD_NAME,name);

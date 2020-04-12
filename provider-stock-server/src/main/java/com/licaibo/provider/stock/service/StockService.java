@@ -10,6 +10,6 @@ public interface StockService {
      * 扣除库存
      * @return
      */
-    int deduction(String name);
+    int deduction(String name) throws InterruptedException;
 
 }

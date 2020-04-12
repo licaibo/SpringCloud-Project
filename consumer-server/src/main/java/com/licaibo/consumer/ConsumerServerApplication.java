@@ -10,10 +10,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * Created by licaibo on 2017/9/30
  */
+//@MapperScan("com.licaibo.consumer.dao")
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients(basePackages = {"com.licaibo.consumer", "com.licaibo.common","com.licaibo.framework"})

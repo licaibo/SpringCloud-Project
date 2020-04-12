@@ -28,6 +28,7 @@ public class OrderStockServiceImpl implements OrderStockService {
     @Override
     @GlobalTransactional(name = "oderStockHandler",rollbackFor = Exception.class)
     public int oderStockHandler(String oderName, String stockName) {
+
         //下订单
         int orderResul = providerOrderFeign.addOrder(oderName);
         //扣除库存
