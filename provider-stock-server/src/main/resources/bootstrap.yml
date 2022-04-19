@@ -9,11 +9,6 @@ spring:
 #      profile: ${config.profile:dev}
   application:
     name: provider-stock-server
-  # seata
-  cloud:
-    alibaba:
-      seata:
-        tx-service-group: licaibo_tx_group
 
 
   # MySQL
