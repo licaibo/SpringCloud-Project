@@ -1,0 +1,20 @@
+server:
+  port: 8085
+
+spring:
+#  cloud:
+#    config:
+#      uri: http://localhost:${config.port:5555}
+#      name: service
+#      profile: ${config.profile:dev}
+  application:
+    name: risk-server
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:9001/eureka/
+
+
+
+
