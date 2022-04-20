@@ -15,6 +15,7 @@ spring:
 #    serviceUrl:
 #      defaultZone: http://localhost:9001/eureka/
 
-
-
+risk:
+  dingtalk:
+    serverUrl: xxx
 

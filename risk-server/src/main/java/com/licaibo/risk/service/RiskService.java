@@ -1,4 +1,6 @@
 package com.licaibo.risk.service;
+import com.taobao.api.ApiException;
+
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,10 +26,16 @@ public interface RiskService {
     String getType();
 
     /**
-     * 发送风控预警消息
+     * 发送文本消息
      * @return
      */
-    boolean sendRiskMessage();
+    boolean sendRiskTextMessage(String content) throws ApiException;
+
+    /**
+     * 发送Markdown消息
+     * @return
+     */
+    boolean sendRiskMarkdownMessage(String title,String content) throws ApiException;
 
 
 }
