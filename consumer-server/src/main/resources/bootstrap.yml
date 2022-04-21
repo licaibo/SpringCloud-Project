@@ -7,7 +7,7 @@ spring:
 
   # MySQL
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:10.211.55.5}:${MYSQL_PORT:3306}/provider_order?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    url: jdbc:mysql://${MYSQL_HOST:10.211.55.4}:${MYSQL_PORT:3306}/provider_order?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
     password: 871107274
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -17,6 +17,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:9001/eureka/
+
+rocketmq:
+  name-server: 10.211.55.4:9876
+  producer:
+    group: parallels-vm-mac-producer-group
 
 
 
