@@ -31,6 +31,8 @@ public class RocketMqProducer {
         UserInfo userInfo = UserInfo.builder().id("rocket-mq-send").username("send").password("send-password").build();
         //rocketMQTemplate.convertAndSend(TOPIC, userInfo);
         rocketMQTemplate.send(TOPIC, MessageBuilder.withPayload(userInfo).build());
+
+
     }
 
 
@@ -39,7 +41,8 @@ public class RocketMqProducer {
      */
     public void syncSend() {
         UserInfo userInfo = UserInfo.builder().id("rocket-mq-syncSend").username("syncSend").password("syncSend-password").build();
-        rocketMQTemplate.syncSend(TOPIC,userInfo);
+        SendResult sendResult = rocketMQTemplate.syncSend(TOPIC,userInfo);
+        log.info("syncSend ... {}",sendResult.toString());
     }
 
     /**
@@ -49,7 +52,7 @@ public class RocketMqProducer {
     public void delaySend() {
         UserInfo userInfo = UserInfo.builder().id("rocket-mq-delaySend").username("delaySend").password("delaySend-password").build();
         //等级为3，对应延迟10秒后发送
-        rocketMQTemplate.syncSend(TOPIC, MessageBuilder.withPayload(userInfo).build(),3000,2);
+        rocketMQTemplate.syncSend(TOPIC, MessageBuilder.withPayload(userInfo).build(),3000,5);
     }
 
     /**
